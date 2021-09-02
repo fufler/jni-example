@@ -125,4 +125,6 @@ void Java_com_example_JNILoaderUtilsKt_defineClass(JNIEnv *env, jobject thisObje
     jobject class_loader = env->CallObjectMethod(thisObject, get_class_loader_method_id);
 
     env->DefineClass(null_terminated_class_name, class_loader, class_bytes, env->GetArrayLength(bytes));
+
+    delete[] null_terminated_class_name;
 }
